@@ -72,7 +72,7 @@ Sample JSON request and response messages are in the `test/` folder:
 	You can run the following script which will spawn all request files in the folder at the same time. The response files will be in the same source folder. 
 
 	Format:
-	>~/aws/bin/utils.sh runAll `yourSourceRequestsFolder`
+	>`yourSourceFolder`/bin/utils.sh runAll `yourSourceRequestsFolder`
 	
 	Example:
 	>~/aws/bin/utils.sh runAll ~/aws/lambda
@@ -111,7 +111,7 @@ While the original intention is to build a simple tool, a better enterprise solu
 	*  implement the ElasticCache:
 		+ write-through persistence to a DB.
 		+ emission policy (remove stale cache entries after X period).
-*  Deploy this program core as a continuously running application deployed in an EC2 instance.
+*  Deploy this program core as a continuously running application in a server (e.g. an EC2 instance).
 *  Expose the same lambda function for accepting incoming requests, but now direct the request to the SQS.
 *  For each request:
 	*  If requestID exists in the request message (existing request), 
