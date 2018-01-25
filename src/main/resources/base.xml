@@ -1,0 +1,24 @@
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+
+<!--//////////////////////////////////////////////////////////-->
+<!--base-->
+
+<bean class="org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor"/>
+
+<bean id="appContextProvider" class="com.waikay.aws.common.AppContextProvider"/>
+
+<bean id="propertyPlaceholderConfigurer" class="com.waikay.aws.common.ResourceConfig">
+	<property name="locations">
+		<list>
+			<value>build.properties</value>
+		</list>
+	</property>
+	<property name="ignoreUnresolvablePlaceholders">
+		<value>false</value>
+	</property>
+</bean>
+
+<!--//////////////////////////////////////////////////////////-->
+
+</beans>
